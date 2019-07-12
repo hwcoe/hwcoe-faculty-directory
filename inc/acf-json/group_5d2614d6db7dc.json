@@ -1,0 +1,360 @@
+{
+	"key": "group_5d2614d6db7dc",
+	"title": "Faculty Page Details",
+	"fields": [
+		{
+			"key": "field_5d2614d720405",
+			"label": "Portrait",
+			"name": "faculty_portrait",
+			"type": "image",
+			"instructions": "Image must be 150px by 200px.",
+			"required": 1,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"preview_size": "full",
+			"library": "all",
+			"min_width": 150,
+			"min_height": 200,
+			"min_size": "",
+			"max_width": 150,
+			"max_height": 200,
+			"max_size": "",
+			"mime_types": ""
+		},
+		{
+			"key": "field_5d2614d720481",
+			"label": "Name",
+			"name": "faculty_title",
+			"type": "text",
+			"instructions": "",
+			"required": 1,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "Jane Smith, Ph.D.",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_5d2614d72058c",
+			"label": "Job Title",
+			"name": "faculty_job_title",
+			"type": "textarea",
+			"instructions": "Place titles on separate lines.",
+			"required": 1,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "Professor",
+			"maxlength": "",
+			"rows": 4,
+			"new_lines": "br"
+		},
+		{
+			"key": "field_5d2614d720614",
+			"label": "Bio",
+			"name": "faculty_bio",
+			"type": "wysiwyg",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"tabs": "all",
+			"toolbar": "full",
+			"media_upload": 0,
+			"delay": 0
+		},
+		{
+			"key": "field_5d2614d720712",
+			"label": "Research Areas",
+			"name": "faculty_research_areas",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": ""
+		},
+		{
+			"key": "field_5d2614d7207ad",
+			"label": "Education",
+			"name": "faculty_education",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": 3,
+			"new_lines": "br"
+		},
+		{
+			"key": "field_5d2614d72082b",
+			"label": "Research Interests",
+			"name": "faculty_research_interests",
+			"type": "textarea",
+			"instructions": "Separate multiple areas of interested with a comma or place on separate lines.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": "",
+			"new_lines": "br"
+		},
+		{
+			"key": "field_5d2614d7208a5",
+			"label": "Publications",
+			"name": "faculty_publications",
+			"type": "textarea",
+			"instructions": "List each publication on a separate line. Add an extra line break for more space between lines.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": 10,
+			"new_lines": "wpautop"
+		},
+		{
+			"key": "field_5d2614d72091e",
+			"label": "Awards & Distinctions",
+			"name": "faculty_awards",
+			"type": "textarea",
+			"instructions": "List each award on a separate line.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": 5,
+			"new_lines": "wpautop"
+		},
+		{
+			"key": "field_5d2614d72099b",
+			"label": "Telephone",
+			"name": "faculty_telephone",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "555-555-1234",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_5d2614d720a1a",
+			"label": "Fax",
+			"name": "faculty_fax",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "555-555-5555",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_5d2614d720a9a",
+			"label": "Email",
+			"name": "faculty_email",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "<a href=\"mailto:janesmith@cise.ufl.edu\">janesmith@cise.ufl.edu<\/a>",
+			"placeholder": "<a href=\"mailto:janesmith@cise.ufl.edu\">janesmith@cise.ufl.edu<\/a>",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_5d2614d720b22",
+			"label": "Website",
+			"name": "faculty_website",
+			"type": "textarea",
+			"instructions": "Place website addresses on separate lines.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "<a href=\"test.cise.ufl.edu\" target=\"_blank\">test.cise.ufl.edu<\/a>",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": 4,
+			"new_lines": "br"
+		},
+		{
+			"key": "field_5d2614d720b9b",
+			"label": "Office",
+			"name": "faculty_office",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "E301 CSE",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_5d2614d720c13",
+			"label": "Lab Room",
+			"name": "faculty_lab_room",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "E404 CSE",
+			"prepend": "",
+			"append": "",
+			"maxlength": ""
+		},
+		{
+			"key": "field_5d2614d720c8b",
+			"label": "Mailing Address",
+			"name": "faculty_mailing_address",
+			"type": "textarea",
+			"instructions": "Place address details on separate lines.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": 5,
+			"new_lines": "br"
+		},
+		{
+			"key": "field_5d2614d720d04",
+			"label": "Current Courses",
+			"name": "faculty_current_courses",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"maxlength": "",
+			"rows": 10,
+			"new_lines": "br"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_template",
+				"operator": "==",
+				"value": "single-post-faculty.php"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "acf_after_title",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": [
+		"the_content",
+		"discussion",
+		"comments",
+		"revisions",
+		"author",
+		"format",
+		"tags",
+		"send-trackbacks"
+	],
+	"active": true,
+	"description": ""
+}
