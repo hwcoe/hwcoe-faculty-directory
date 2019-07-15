@@ -34,11 +34,11 @@ if ( !function_exists('hwcoe_faculty_directory_insert_category') ) {
 add_action( 'after_setup_theme', 'hwcoe_faculty_directory_insert_category' );
 
 function hwcoe_faculty_directory_template() {
-	if ( in_category('faculty-pg') ) {
-		include 'single-post-faculty.php';
-		
-	// TODO: switch to faculty post template when faculty-pg category is selected	
+	if ( in_category('faculty-pg') && file_exists(__DIR__ . '/single-post-faculty.php') ) {
+		include __DIR__ . '/single-post-faculty.php';
 	}
 }
 add_filter( 'single_template', 'hwcoe_faculty_directory_template' );
+
 // TODO: load acf local json from plugin folder
+// TODO: breadcrumbs to category archive listing/directory page
