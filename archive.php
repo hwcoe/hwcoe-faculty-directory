@@ -41,4 +41,6 @@ get_header(); ?>
 </div>
 </div>
 
+<!-- have faculty-pg category archive show faculty directory as desired? -->
+
 <?php get_footer(); ?>

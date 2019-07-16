@@ -1,0 +1,36 @@
+/**
+/*
+/* HWCOE Faculty Directory Styles
+/*
+**/
+
+/* Removes post meta data */
+.post-template-single-post-faculty .widget-area, .post-template-single-post-faculty .entry-meta { 
+	/*display:none;*/
+}
+.faculty_details h1 { 
+	font-size: 30px; 
+	margin: 40px 0 0;
+	line-height: 43px;
+}
+.faculty_details h3 { 
+	margin: 0;
+}
+.faculty_details h4 { 
+	margin: 0;
+	font-size: 22px;
+}
+.faculty_details ul li::before { 
+	display: none;
+}
+.faculty_details ul li, .faculty_details ol li { 
+	text-transform: none;
+}
+
+/*Faculty Contact Information Styles*/
+.faculty_contact_information h3 { 
+	margin-bottom: 10px;
+}
+.faculty_contact_information p {
+	margin: 0px;
+}
