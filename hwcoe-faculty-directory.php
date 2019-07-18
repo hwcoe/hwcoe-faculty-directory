@@ -32,15 +32,24 @@ if ( !function_exists('hwcoe_faculty_directory_insert_category') ) {
 }
 add_action( 'after_setup_theme', 'hwcoe_faculty_directory_insert_category' );
 
+// Use category-faculty-pg template for faculty-pg category archive
+
+add_filter( 'category_template', 'faculty_pg_category_template' );
+function faculty_pg_category_template( $template ) {
+      if ( is_category('faculty-pg') ) {
+      	echo $template;
+    	$template = locate_template('category-faculty-pg.php', true ); 
+    }
+    return $template;
+    	
+}
 
 // Give faculty-pg category a custom permalink structure
-add_filter( 'category_link', 'custom_category_permalink', 10, 2 );
+// add_filter( 'category_link', 'custom_category_permalink', 10, 2 );
 function custom_category_permalink( $link, $cat_id ) {
     $slug = get_term_field( 'slug', $cat_id, 'category' );
     if ( ! is_wp_error( $slug ) && 'faculty-pg' === $slug ) {
         $link = home_url( user_trailingslashit( '/directory/', 'category' ) );
-
-        // $link = home_url( user_trailingslashit( '/faculty-pg/', 'category' ) );
     }
     return $link;
 }
@@ -51,37 +60,32 @@ function custom_permalink( $permalink, $post, $leavename ) {
     // Get the category for the post
     $category = get_the_category($post->ID);
     if (  !empty($category) && $category[0]->cat_name == "faculty-pg" ) {
-
-        $cat_name = strtolower($category[0]->cat_name);
-        // $permalink = trailingslashit( home_url('/'. $cat_name . '/' . $post->post_name .'/' ) );
-        $permalink = trailingslashit( home_url('/directory/' . $post->post_name .'/' ) );
+		$permalink = trailingslashit( home_url('/directory/' . $post->post_name .'/' ) );
     }
     return $permalink;
 }
 
 add_action( 'init', 'custom_rewrite_rules' );
 function custom_rewrite_rules() {
-    // add_rewrite_rule(
-    //     'faculty-pg(?:/page/?([0-9]{1,})|)/?$',
-    //     'index.php?category_name=faculty-pg&paged=$matches[1]',
-    //     'top' // The rule position; either 'top' or 'bottom' (default).
-    // );
     add_rewrite_rule(
         'directory(?:/page/?([0-9]{1,})|)/?$',
         'index.php?category_name=faculty-pg&paged=$matches[1]',
         'top' // The rule position; either 'top' or 'bottom' (default).
     );
-    // add_rewrite_rule(
-    //     'faculty-pg/([^/]+)(?:/([0-9]+))?/?$',
-    //     'index.php?category_name=faculty-pg&name=$matches[1]&page=$matches[2]',
-    //     'top' // The rule position; either 'top' or 'bottom' (default).
-    // );
-        add_rewrite_rule(
+    add_rewrite_rule(
         'directory/([^/]+)(?:/([0-9]+))?/?$',
         'index.php?category_name=faculty-pg&name=$matches[1]&page=$matches[2]',
         'top' // The rule position; either 'top' or 'bottom' (default).
     );
 }
+// Exclude faculty-pg category from post archive
+function faculty_pg_exclude_category($query){
+	$cat_id = get_cat_ID( 'faculty-pg' );
+    if ( $query->is_archive() && ! is_category('faculty-pg') && ! is_admin() ) {
+        $query->set( 'category__not_in', $cat_id ); 
+    }
+}
+add_action('pre_get_posts','faculty_pg_exclude_category');
 
 // Change posts with faculty-pg category to the single-post-faculty post template
 function hwcoe_faculty_directory_template() {
@@ -92,5 +96,11 @@ function hwcoe_faculty_directory_template() {
 }
 add_filter( 'single_template', 'hwcoe_faculty_directory_template' );
 
+
+
+
+
+
 // TODO: load acf local json from plugin folder
 // TODO: breadcrumbs to category archive listing/directory page
+// TODO: custom faculty-pg archive?
