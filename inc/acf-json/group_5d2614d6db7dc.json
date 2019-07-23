@@ -3,49 +3,6 @@
     "title": "Faculty Page Details",
     "fields": [
         {
-            "key": "field_5d2614d720405",
-            "label": "Portrait",
-            "name": "faculty_portrait",
-            "type": "image",
-            "instructions": "Image must be 150px by 200px.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "full",
-            "library": "all",
-            "min_width": 150,
-            "min_height": 200,
-            "min_size": "",
-            "max_width": 150,
-            "max_height": 200,
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5d2614d720481",
-            "label": "Name",
-            "name": "faculty_title",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "Jane Smith, Ph.D.",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5d2614d72058c",
             "label": "Job Title",
             "name": "faculty_job_title",
@@ -334,20 +291,13 @@
     "location": [
         [
             {
-                "param": "post_template",
-                "operator": "==",
-                "value": "single-post-faculty.php"
-            }
-        ],
-        [
-            {
                 "param": "post_category",
                 "operator": "==",
                 "value": "category:faculty-pg"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": -1,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -362,7 +312,6 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
-    "description": "",
-    "modified": 1563205049
+    "active": true,
+    "description": ""
 }

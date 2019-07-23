@@ -16,6 +16,8 @@ get_header(); ?>
 				$breadcrumb = '<ul class="breadcrumb-wrap">';
 				// Link to category page
 				// TODO: add conditional and allow user to enter $directory_link (or do custom archive)
+				// TODO: display feature image in place of ACF field upload, remove ACF field upload
+				// TODO: display post title in place of ACF name field, remove ACF name field
 				$cat_id = get_cat_ID( 'faculty-pg' );
 				$cat_link = get_category_link( $cat_id );
 				$breadcrumb .= '<li class="item-home"><a class="bread-link bread-home" href="' . $cat_link . '">Faculty Directory</a></li>';	
@@ -31,19 +33,13 @@ get_header(); ?>
 	  <div class="col-sm-8 faculty_details">
 		  <div class="row">
 			<div class="col-md-3">
-				<?php 
-					$image    = get_field( 'faculty_portrait' );
-					$alt      = $image['alt'];
-					$img_src  = $image['sizes']['large'];
-				?>
-				<p><img src="<?php echo $img_src; ?>" alt="<?php echo $alt; ?>" class="img-full"></p>
+				<?php if ( has_post_thumbnail() ): ?>
+						<?php echo hwcoe_ufl_post_featured_image(); ?>	
+				<?php endif; ?>
 			</div>
 			<div class="col-md-9">
+				<h1><?php echo get_the_title(); ?></h1>
 				<?php 
-					if(get_field('faculty_title')){ //if the field is not empty
-						echo '<h1>' . get_field('faculty_title') . '</h1>'; //display it
-					} 
-
 					if(get_field('faculty_job_title')){ //if the field is not empty
 						echo '<p><em>' . get_field('faculty_job_title') . '</em></p>'; //display it
 					} 

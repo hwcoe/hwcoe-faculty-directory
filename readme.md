@@ -5,10 +5,11 @@ TODO: display post title in place of ACF name field, remove ACF name field
 # Faculty Directory
 
 ## Setup
-1.	For each faculty member, create a new post. Make sure you update the permalink to show the URL structure lastname-firstname if you want the Faculty Directory display to be alphabetical by last name.
+1.	For each faculty member, create a new post. 
+	- Permalink: Edit this to show the URL structure lastname-firstname if you want the Faculty Directory display to be alphabetical by last name.
 	⁃	Title: Faculty member’s name (this is what will display at the top of the page)
 	⁃	Category: faculty-pg (choosing this category will automatically apply the Faculty Single Page post template)
-	⁃	Be sure to upload a feature image, as this will display on the faculty directory, and also make sure to check "Hide Feature Image" under post options
+	⁃	Be sure to upload a feature image, as this will display on the faculty directory and post.
 	⁃	Fill out the corresponding details for your faculty
 	⁃	When you are done, put whatever details you would like displayed on the faculty directory into the Excerpt area.
 	⁃	For Example: 
