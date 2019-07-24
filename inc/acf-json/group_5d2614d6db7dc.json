@@ -313,5 +313,6 @@
         "send-trackbacks"
     ],
     "active": true,
+    "private": true,
     "description": ""
 }
