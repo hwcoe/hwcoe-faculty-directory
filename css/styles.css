@@ -4,6 +4,15 @@
 /*
 **/
 
+/* WP SHOW POSTS DIRECTORY LISTING */
+.wp-show-posts-entry-header {
+	margin:0 !important;
+}
+.wp-show-posts-entry-title {
+	font: 100 18px/24px "gentona","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*** FACULTY POSTS ***/
 /* Removes post meta data */
 .post-template-single-post-faculty .widget-area, .post-template-single-post-faculty .entry-meta { 
 	/*display:none;*/
