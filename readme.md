@@ -6,18 +6,17 @@ TODO: display post title in place of ACF name field, remove ACF name field
 
 ## Setup
 1.	For each faculty member, create a new post. 
-	- Permalink: Edit this to show the URL structure lastname-firstname if you want the Faculty Directory display to be alphabetical by last name.
+	- Slug: Edit this to show the URL structure lastname-firstname if you want the Faculty Directory display to be alphabetical by last name.
 	⁃	Title: Faculty member’s name (this is what will display at the top of the page)
 	⁃	Category: faculty-pg (choosing this category will automatically apply the Faculty Single Page post template)
 	⁃	Be sure to upload a feature image, as this will display on the faculty directory and post.
 	⁃	Fill out the corresponding details for your faculty
-	⁃	When you are done, put whatever details you would like displayed on the faculty directory into the Excerpt area.
-	⁃	For Example: 
-		<a href="/anthony-lisa/">Lisa Anthony, Ph.D.</a>
-		Assistant Professor
-		352-505-1589
-		E542 CSE
-		<a href="mailto:lanthony@cise.ufl.edu">lanthony@cise.ufl.edu</a>
+	⁃	Excerpt: Details to be displayed in the faculty directory page. Should be brief, HTML can be used. 
+		⁃	For example, for Lisa Anthony: 
+			Assistant Professor
+			352-505-1589
+			E542 CSE
+			<a href="mailto:lanthony@cise.ufl.edu">lanthony@cise.ufl.edu</a>
 
 ## Displaying a faculty directory
 1.	Make sure the WP Show posts plugin is added
@@ -29,19 +28,22 @@ TODO: display post title in place of ACF name field, remove ACF name field
 		⁃	Posts per page: 70 (this depends on how many faculty you have and if you want this paginated.)
 		⁃	Pagination: leave unchecked
 	⁃	Columns
-		⁃	Columns: 3 (works well with the HWCOE layout)
+		⁃	Columns: 3 (works well with the HWCOE default template layout) or 4 (works well with no sidebars template)
 		⁃	Columns gutter: 2em
 	⁃	Images (NOTE: these don't show up unless you upload a featured image to each faculty post)
 		⁃	Images: checked
 		⁃	Image width: 150
 		⁃	Image height: 200
 		⁃	Image Alignment: Center
-		⁃	Image Location: Below Title
+		⁃	Image Location: Above Title
 	⁃	Content
 		⁃	Content Type: Excerpt
-		⁃	Make sure all other fields are blank or unchecked. (NOTE: Nothing shows up from ACF fields)
+		- Excerpt length: leave blank
+		- Include title: checked
+		- Title element: h3
+		- Read more text/button class: leave blank
 	⁃	Meta
-	⁃		All unchecked
+		⁃	All unchecked
 	⁃	More Settings
 		⁃	Order: Ascending
 		⁃	Order by: Slug
