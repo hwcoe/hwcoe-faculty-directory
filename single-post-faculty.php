@@ -31,23 +31,23 @@ get_header(); ?>
 	</div>
 	<div class="row">
 	  <div class="col-sm-8 faculty_details">
-		  <div class="row">
-			<div class="col-md-3">
-				<?php if ( has_post_thumbnail() ): ?>
-						<?php echo hwcoe_ufl_post_featured_image(); ?>	
-				<?php endif; ?>
-			</div>
-			<div class="col-md-9">
-				<h1><?php echo get_the_title(); ?></h1>
-				<?php 
-					if(get_field('faculty_job_title')){ //if the field is not empty
-						echo '<p><em>' . get_field('faculty_job_title') . '</em></p>'; //display it
-					} 
-				?>    
-			</div>
-		  </div>
-		  <div class="row">
-			  <div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3">
+					<?php if ( has_post_thumbnail() ) {
+						echo hwcoe_ufl_post_featured_image();
+					} ?>
+				</div>
+				<div class="col-md-9">
+					<h1><?php echo get_the_title(); ?></h1>
+					<?php 
+						if(get_field('faculty_job_title')){ //if the field is not empty
+							echo '<p><em>' . get_field('faculty_job_title') . '</em></p>'; //display it
+						} 
+					?>    
+				</div>
+		  	</div>
+		 	<div class="row">
+			 	<div class="col-md-12">
 				  <?php 
 						if(get_field('faculty_bio')){ //if the field is not empty
 							echo '<h3>Bio</h3>' . get_field('faculty_bio'); //display it
@@ -77,11 +77,11 @@ get_header(); ?>
 							echo '<h3>Awards &amp; Distinctions</h3>' . get_field('faculty_awards'); //display it
 						} 
 					?>
-			  </div>
-		  </div>
-	  </div>
-	  <div class="col-md-4 faculty_contact_information">
-		  <h3>Contact Information</h3>
+				</div>
+			</div>
+		</div><!-- col-sm-8 faculty_details -->
+		<div class="col-md-4 faculty_contact_information">
+		  	<h3>Contact Information</h3>
 			<?php 
 				if(get_field('faculty_telephone')){ //if the field is not empty
 					echo '<p><strong>Telephone:</strong> ' . get_field('faculty_telephone') . '</p>'; //display it
@@ -111,8 +111,8 @@ get_header(); ?>
 					echo '<p><strong>Mailing Address:</strong></p> <p>' . get_field('faculty_mailing_address') . '</p>'; //display it
 				} 
 			?>
-	  </div>
+	  </div> <!-- /col-md-4 faculty_contact_information -->
 	</div>
-	</div>
+</div>
 
 <?php get_footer(); ?>
