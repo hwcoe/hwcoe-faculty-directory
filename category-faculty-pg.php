@@ -21,16 +21,15 @@ get_header(); ?>
 	<div tabindex="-1" class="<?php echo hwcoe_ufl_page_column_class(); ?>">
 		<?php 
 		if ( function_exists( 'wpsp_display' ) ) {
-				wpsp_display( 106 );
-				// need to hook in to use title instead of ID
-			}
-			else {
-				while ( have_posts() ) : the_post();
-					get_template_part( 'template-parts/content', get_post_type() );
-				endwhile; // End of the loop. 
+		    echo do_shortcode("[wp_show_posts name=\"Faculty List\"]");
+		}
+		else {
+			while ( have_posts() ) : the_post();
+				get_template_part( 'template-parts/content', get_post_type() );
+			endwhile; // End of the loop. 
 
-					// Previous/next page navigation.
-					the_posts_pagination();
+			// Previous/next page navigation.
+			the_posts_pagination();
 			}
 
 	?>

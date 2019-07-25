@@ -51,5 +51,5 @@ TODO: display post title in place of ACF name field, remove ACF name field
 		⁃	Tax operator: IN
 		⁃	No results message: Sorry, no posts were found
 		⁃	Everything else is blank or unchecked.
-3.	In the place where you want your faculty directory to show up, add the corresponding WP Show Posts shortcode.
+3.	To display the directory, you can either create a page containing the WP Show Posts shortcode, or link to the category archive at www.YOURDOMAIN.ufl.edu/directory/ (for the second option, make sure your WP Show Posts list is named "Faculty List"). 
 

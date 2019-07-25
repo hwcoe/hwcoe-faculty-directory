@@ -32,15 +32,6 @@ if ( !function_exists('hwcoe_fac_dir_insert_category') ) {
 }
 add_action( 'after_setup_theme', 'hwcoe_fac_dir_insert_category' );
 
-// Use category-faculty-pg template for faculty-pg category archive
-function faculty_pg_category_template( $template ) {
-	if ( is_category('faculty-pg') ) {
-        $template = ( __DIR__ ) . '/category-faculty-pg.php';
-    }
-    return $template;
-}
-add_filter( 'category_template', 'faculty_pg_category_template' );
-
 // Give faculty-pg category a custom permalink structure
 add_filter( 'category_link', 'custom_category_permalink', 10, 2 );
 function custom_category_permalink( $link, $cat_id ) {
@@ -86,6 +77,15 @@ function faculty_pg_exclude_category($query){
 // add_action('pre_get_posts','faculty_pg_exclude_category');
 // bug: currently excludes from shortcode listing
 
+// Use category-faculty-pg template for faculty-pg category archive
+function faculty_pg_category_template( $template ) {
+    if ( is_category('faculty-pg') ) {
+        $template = ( __DIR__ ) . '/category-faculty-pg.php';
+    }
+    return $template;
+}
+add_filter( 'category_template', 'faculty_pg_category_template' );
+
 // Change posts with faculty-pg category to the single-post-faculty post template
 function hwcoe_fac_dir_template() {
 	global $post;
@@ -94,7 +94,6 @@ function hwcoe_fac_dir_template() {
 	}
 }
 // add_filter( 'single_template', 'hwcoe_fac_dir_template' );
-
 
 // Append additional Local JSON load point for plugin's ACF field groups
 add_filter('acf/settings/load_json', 'hwcoe_fac_dir_acf_json_load_point');
