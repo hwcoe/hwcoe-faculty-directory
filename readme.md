@@ -37,7 +37,7 @@ TODO: display post title in place of ACF name field, remove ACF name field
 		⁃	Image Alignment: Center
 		⁃	Image Location: Above Title
 	⁃	Content
-		⁃	Content Type: Excerpt
+		⁃ Content Type: Excerpt
 		- Excerpt length: leave blank
 		- Include title: checked
 		- Title element: h3

@@ -100,14 +100,13 @@ get_header(); ?>
 				} 
 
 				if(get_field('faculty_email')){ //if the field is not empty
-					$faculty_email = get_field('faculty_email');
+					$faculty_email = esc_attr( get_field('faculty_email') );
 					echo '<p><strong>Email:</strong> <a href="mailto: ' . $faculty_email . '">' . $faculty_email . '</a></p>'; //display it
 				} 
 				if ( have_rows('faculty_website') ):
 					echo '<p><strong>Website:</strong> ';		
 					while( have_rows('faculty_website') ): the_row();
-
-						$website_url = get_sub_field('website_url');
+						$website_url = esc_url( get_sub_field('website_url') );
 						echo '<a href="' . $website_url . '">' . $website_url . '</a><br />'; //display it
 					endwhile;
 					echo '</p>';

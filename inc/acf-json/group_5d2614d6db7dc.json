@@ -187,7 +187,7 @@
                     "id": ""
                 },
                 "default_value": "",
-                "placeholder": "",
+                "placeholder": "name@ufl.edu",
                 "prepend": "",
                 "append": ""
         },
@@ -196,7 +196,7 @@
             "label": "Website",
             "name": "faculty_website",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Select the \"Add Website\" button to add member websites.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
