@@ -16,11 +16,14 @@ get_header(); ?>
 				$breadcrumb = '<ul class="breadcrumb-wrap">';
 				// Link to category page
 				// TODO: add conditional and allow user to enter $directory_link (or do custom archive)
-				// TODO: display feature image in place of ACF field upload, remove ACF field upload
-				// TODO: display post title in place of ACF name field, remove ACF name field
+
+				// if $directory_link ACF field is not empty
+
+				// else
 				$cat_id = get_cat_ID( 'faculty-pg' );
-				$cat_link = get_category_link( $cat_id );
-				$breadcrumb .= '<li class="item-home"><a class="bread-link bread-home" href="' . $cat_link . '">Faculty Directory</a></li>';	
+				$directory_link = get_category_link( $cat_id );
+				//endif
+				$breadcrumb .= '<li class="item-home"><a class="bread-link bread-home" href="' . $directory_link . '">Faculty Directory</a></li>';	
 				$breadcrumb .= '<li class="item-current item-' . $post->ID . '"><strong>' . get_the_title() . '</strong></li>';
 				$breadcrumb .= "</ul>";
 				
@@ -35,7 +38,12 @@ get_header(); ?>
 				<div class="col-md-3">
 					<?php if ( has_post_thumbnail() ) {
 						echo hwcoe_ufl_post_featured_image();
-					} ?>
+					} else {
+						echo '<figure class="full-width img-responsive">';
+						echo '<img class="attachment-full_width_thumb size-full_width_thumb wp-post-image" src="' . plugins_url( 'img/noimage.png', __FILE__ ) . '" width="480" height="640" alt="No image available" /> ';
+						echo '</figure>';
+					} 
+					?>
 				</div>
 				<div class="col-md-9">
 					<h1><?php echo get_the_title(); ?></h1>
@@ -92,13 +100,19 @@ get_header(); ?>
 				} 
 
 				if(get_field('faculty_email')){ //if the field is not empty
-					echo '<p><strong>Email:</strong> ' . get_field('faculty_email') . '</p>'; //display it
+					$faculty_email = get_field('faculty_email');
+					echo '<p><strong>Email:</strong> <a href="mailto: ' . $faculty_email . '">' . $faculty_email . '</a></p>'; //display it
 				} 
+				if ( have_rows('faculty_website') ):
+					echo '<p><strong>Website:</strong> ';		
+					while( have_rows('faculty_website') ): the_row();
 
-				if(get_field('faculty_website')){ //if the field is not empty
-					echo '<p><strong>Website:</strong> ' . get_field('faculty_website') . '</p>'; //display it
-				} 
-
+						$website_url = get_sub_field('website_url');
+						echo '<a href="' . $website_url . '">' . $website_url . '</a><br />'; //display it
+					endwhile;
+					echo '</p>';
+				endif;
+				
 				if(get_field('faculty_office')){ //if the field is not empty
 					echo '<p><strong>Office:</strong> ' . get_field('faculty_office') . '</p>'; //display it
 				} 

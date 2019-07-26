@@ -175,9 +175,27 @@
         },
         {
             "key": "field_5d2614d720a9a",
-            "label": "Email",
-            "name": "faculty_email",
-            "type": "text",
+                "label": "Email",
+                "name": "faculty_email",
+                "type": "email",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+        },
+        {
+            "key": "field_5d2614d720b22",
+            "label": "Website",
+            "name": "faculty_website",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -186,30 +204,29 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "<a href=\"mailto:janesmith@cise.ufl.edu\">janesmith@cise.ufl.edu<\/a>",
-            "placeholder": "<a href=\"mailto:janesmith@cise.ufl.edu\">janesmith@cise.ufl.edu<\/a>",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5d2614d720b22",
-            "label": "Website",
-            "name": "faculty_website",
-            "type": "textarea",
-            "instructions": "Place website addresses on separate lines.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "<a href=\"test.cise.ufl.edu\" target=\"_blank\">test.cise.ufl.edu<\/a>",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "br"
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Website",
+            "sub_fields": [
+                {
+                    "key": "field_5d3b1c818c61d",
+                    "label": "Website URL",
+                    "name": "website_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https:\/\/www.eng.ufl.edu"
+                }
+            ]
         },
         {
             "key": "field_5d2614d720b9b",
@@ -313,6 +330,6 @@
         "send-trackbacks"
     ],
     "active": true,
-    "private": true,
+    "private": false,
     "description": ""
 }

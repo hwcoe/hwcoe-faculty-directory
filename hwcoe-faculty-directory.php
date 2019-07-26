@@ -109,4 +109,3 @@ function hwcoe_fac_dir_acf_json_load_point( $paths ) {
 }
 
 // TODO: breadcrumbs to category archive listing/directory page
-// TODO: custom faculty-pg archive?
