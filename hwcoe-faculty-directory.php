@@ -10,14 +10,15 @@ Author URI: http://allisoncandreva.com/
 
 
 /* Enqueue assets */
+add_action( 'wp_enqueue_scripts', 'hwcoe_fac_dir_assets' );
 function hwcoe_fac_dir_assets() {
 	//todo: enqueue plugin CSS
 	wp_enqueue_style( 'hwcoe-faculty-directory-style', plugins_url( 'css/styles.css', __FILE__ )	);
 }
-add_action( 'wp_enqueue_scripts', 'hwcoe_fac_dir_assets' );
 /*
 * Adds Category for Faculty Post
 */
+add_action( 'after_setup_theme', 'hwcoe_fac_dir_insert_category' );
 if ( !function_exists('hwcoe_fac_dir_insert_category') ) {
 	function hwcoe_fac_dir_insert_category() {
 		wp_insert_term(
@@ -30,7 +31,6 @@ if ( !function_exists('hwcoe_fac_dir_insert_category') ) {
 		);
 	}
 }
-add_action( 'after_setup_theme', 'hwcoe_fac_dir_insert_category' );
 
 // Give faculty-pg category a custom permalink structure
 add_filter( 'category_link', 'custom_category_permalink', 10, 2 );
@@ -68,40 +68,41 @@ function custom_rewrite_rules() {
 }
 
 // Exclude faculty-pg category from post archive
+// add_action('pre_get_posts','faculty_pg_exclude_category');
+// bug: currently excludes from shortcode listing
 function faculty_pg_exclude_category($query){
 	$cat_id = get_cat_ID( 'faculty-pg' );
     if ( $query->is_archive() && ! is_category('faculty-pg') && ! is_admin() ) {
         $query->set( 'category__not_in', $cat_id ); 
     }
 }
-// add_action('pre_get_posts','faculty_pg_exclude_category');
-// bug: currently excludes from shortcode listing
 
 // Use category-faculty-pg template for faculty-pg category archive
+add_filter( 'category_template', 'faculty_pg_category_template' );
 function faculty_pg_category_template( $template ) {
     if ( is_category('faculty-pg') ) {
         $template = ( __DIR__ ) . '/category-faculty-pg.php';
     }
     return $template;
 }
-add_filter( 'category_template', 'faculty_pg_category_template' );
 
 // Change posts with faculty-pg category to the single-post-faculty post template
-function hwcoe_fac_dir_template() {
-	global $post;
-	if ( in_category('faculty-pg', $post->ID) && file_exists(__DIR__ . '/single-post-faculty.php') ) {
-		include __DIR__ . '/single-post-faculty.php';
-	}
+add_filter( 'single_template', 'hwcoe_fac_dir_post_template' );
+function hwcoe_fac_dir_post_template($single_template) {
+     global $post;
+
+    if ( in_category('faculty-pg', $post->ID) && file_exists(__DIR__ . '/single-post-faculty.php') ) {
+        $single_template = (__DIR__) . '/single-post-faculty.php';
+    }
+    return $single_template;  
 }
-// add_filter( 'single_template', 'hwcoe_fac_dir_template' );
 
 // Append additional Local JSON load point for plugin's ACF field groups
 add_filter('acf/settings/load_json', 'hwcoe_fac_dir_acf_json_load_point');
-
 function hwcoe_fac_dir_acf_json_load_point( $paths ) {
     
     // append path
-    $paths[] = __DIR__ . '/inc/acf-json';
+    $paths[] = (__DIR__) . '/inc/acf-json';
 
     // return
     return $paths;
