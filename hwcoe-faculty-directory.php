@@ -12,7 +12,6 @@ Author URI: http://allisoncandreva.com/
 /* Enqueue assets */
 add_action( 'wp_enqueue_scripts', 'hwcoe_fac_dir_assets' );
 function hwcoe_fac_dir_assets() {
-	//todo: enqueue plugin CSS
 	wp_enqueue_style( 'hwcoe-faculty-directory-style', plugins_url( 'css/styles.css', __FILE__ )	);
 }
 /*
@@ -86,6 +85,14 @@ function faculty_pg_category_template( $template ) {
     return $template;
 }
 
+// Customize title for faculty-pg category archive
+add_filter( 'pre_get_document_title', 'faculty_pg_archive_title', 999, 1 );
+function faculty_pg_archive_title( $title ) {
+    if ( is_category('faculty-pg') ) {
+        $title = "Faculty Directory";
+    }
+    return $title;
+}
 // Change posts with faculty-pg category to the single-post-faculty post template
 add_filter( 'single_template', 'hwcoe_fac_dir_post_template' );
 function hwcoe_fac_dir_post_template($single_template) {

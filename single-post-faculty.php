@@ -16,8 +16,10 @@ get_header(); ?>
 				$breadcrumb = '<ul class="breadcrumb-wrap">';
 				// Link to category page
 				// TODO: add conditional and allow user to enter $directory_link (or do custom archive)
+				// show custom field if post type = list and name = Faculty List
 
 				// if $directory_link ACF field is not empty
+				// code to link to URL
 
 				// else
 				$cat_id = get_cat_ID( 'faculty-pg' );

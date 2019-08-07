@@ -1,7 +1,3 @@
-TODO: bake in custom permalink structure for faculty-pg category (/%postname%/)
-TODO: display feature image in place of ACF field upload, remove ACF field upload
-TODO: display post title in place of ACF name field, remove ACF name field
-
 # Faculty Directory
 
 ## Setup
