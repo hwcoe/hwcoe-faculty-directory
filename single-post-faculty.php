@@ -10,30 +10,7 @@
 get_header(); ?>
 
 <div id="main" class="container main-content">
-	<div class="row">
-		<div class="col-sm-12">
-			<?php 
-				$breadcrumb = '<ul class="breadcrumb-wrap">';
-				// Link to category page
-				// TODO: add conditional and allow user to enter $directory_link (or do custom archive)
-				// show custom field if post type = list and name = Faculty List
-
-				// if $directory_link ACF field is not empty
-				// code to link to URL
-
-				// else
-				$cat_id = get_cat_ID( 'faculty-pg' );
-				$directory_link = get_category_link( $cat_id );
-				//endif
-				$breadcrumb .= '<li class="item-home"><a class="bread-link bread-home" href="' . $directory_link . '">Faculty Directory</a></li>';	
-				$breadcrumb .= '<li class="item-current item-' . $post->ID . '"><strong>' . get_the_title() . '</strong></li>';
-				$breadcrumb .= "</ul>";
-				
-				echo $breadcrumb;
-
-			?> 
-		</div>
-	</div>
+	
 	<div class="row">
 	  <div class="col-sm-8 faculty_details">
 			<div class="row">

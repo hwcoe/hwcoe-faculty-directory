@@ -114,23 +114,3 @@ function hwcoe_fac_dir_acf_json_load_point( $paths ) {
     // return
     return $paths;
 }
-
-// TODO: breadcrumbs to category archive listing/directory page
-
-// meta box
-if ( ! function_exists( 'faculty_url_add_meta_box' ) ) {
-    add_action( 'add_meta_boxes_wp_show_posts', 'faculty_url_add_meta_box' );
-    function faculty_url_add_meta_box( $post ){
-        add_meta_box( 'faculty_url', __( 'Faculty URL', 'wp-show-posts' ), 'faculty_url_metabox', 'wp_show_posts', 'side', 'low' );
-    }
-}
-
-if ( ! function_exists( 'faculty_url_metabox' ) ) {
-    function faculty_url_metabox( $post ) {
-        $faculty_url = get_option( 'faculty_url' );
-        ?>
-        <h4 style="margin-bottom:5px;"><?php _e( 'Faculty Directory URL','wp-show-posts' ); ?></h4>
-        <input type="text" class="widefat" placeholder="https://facultydirectoryurl.edu" value="<?php echo esc_url($faculty_url); ?>" />
-        <?php
-    }
-}
