@@ -67,11 +67,11 @@ function custom_rewrite_rules() {
 }
 
 // Exclude faculty-pg category from post archive
-// add_action('pre_get_posts','faculty_pg_exclude_category');
-// bug: currently excludes from shortcode listing
+add_action('pre_get_posts','faculty_pg_exclude_category');
 function faculty_pg_exclude_category($query){
 	$cat_id = get_cat_ID( 'faculty-pg' );
-    if ( $query->is_archive() && ! is_category('faculty-pg') && ! is_admin() ) {
+    if ( $query-> is_main_query() && ! is_category('faculty-pg') && ! is_admin() ) {
+    // if ( $query-> is_main_query() || is_archive() && ! is_category('faculty-pg') && ! is_admin() ) {
         $query->set( 'category__not_in', $cat_id ); 
     }
 }
