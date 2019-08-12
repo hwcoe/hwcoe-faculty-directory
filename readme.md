@@ -49,3 +49,12 @@
 		⁃	Everything else is blank or unchecked.
 3.	To display the directory, you can either create a page containing the WP Show Posts shortcode, or link to the category archive at www.YOURDOMAIN.ufl.edu/directory/ (for the second option, make sure your WP Show Posts list is named "Faculty List"). 
 
+## Changelog
+
+1.0.0-beta
+- Move faculty directory functionality from [hwcoe-ufl-child-1](https://github.com/UFCISEMedia/hwcoe-ufl-child-1)
+- Change Email and Website fields to those types rather than Text in the field group
+- Remove Name and Portrait ACF fields and display the post title and featured image in the post instead 
+- Create custom permalink structure for faculty-pg posts
+- Update instructions
+- Set JSON field group to “private”
