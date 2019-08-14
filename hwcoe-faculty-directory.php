@@ -3,7 +3,7 @@
 Plugin Name: HWCOE Faculty Directory
 Description: This plugin allows users to create a Faculty Listing post category and display category posts using the WP Show Posts or List Category Posts plugin.
 Requirements: Advanced Custom Fields; WP Show Posts or List Category Posts; hwcoe-ufl or hwcoe-ufl-child theme. 
-Version: 1.0
+Version: 1.0.0-beta
 Author: Allison Logan
 Author URI: http://allisoncandreva.com/
 */
