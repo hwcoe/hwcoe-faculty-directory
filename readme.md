@@ -17,6 +17,7 @@
 ## Displaying a faculty directory
 1.	Make sure the WP Show posts plugin is added
 2.	Add a new WP Show Post list with the following settings
+	- List title: Faculty List
 	⁃	Posts
 		⁃	Post Type: post
 		⁃	Taxonomy: category
