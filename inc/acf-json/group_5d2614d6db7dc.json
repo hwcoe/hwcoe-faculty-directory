@@ -330,6 +330,6 @@
         "send-trackbacks"
     ],
     "active": true,
-    "private": false,
+    "private": true,
     "description": ""
 }
